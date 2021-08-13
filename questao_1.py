@@ -1,21 +1,47 @@
 lista = [5,7,2,9,4,1,3]
 
+
 # a) tamanho da lista
-print(f'O tamanho da lista é de {len(lista)} items.')
+contador = 0
+for item in lista:
+    contador += 1
+print(f'O tamanho da lista é de {contador} items.')
+
 
 # b) maior valor
-print(f'O maior valor da lista é {max(lista)}.')
+maior = 0
+for item in lista:
+    if item > maior:
+        maior = item
+print(f'O maior valor da lista é {maior}.')
+
 
 # c) menor valor
-print(f'O menor valor da lista é {min(lista)}.')
+menor = 999
+for item in lista:
+    if item < menor:
+        menor = item
+print(f'O menor valor da lista é {menor}.')
+
 
 # d) soma dos valores
-print(f'A soma dos valores da lista é igual a {sum(lista)}.')
+somas = 0
+for item in lista:
+    somas += item
+print(f'A soma dos valores da lista é igual a {somas}.')
+
 
 # e) lista em ordem crescente
-lista.sort()
+for passagem in range(len(lista)-1, 0, -1):
+    for num in range(passagem):
+        if lista[num] > lista[num+1]:
+            lista[num+1], lista[num]  = lista[num], lista[num+1]
 print(f'Lista em ordem crescente: {lista}')
 
+
 # f) lista em ordem decrescente
-lista.reverse()
+for passagem in range(len(lista)-1, 0, -1):
+    for num in range(passagem):
+        if lista[num] < lista[num+1]:
+            lista[num+1], lista[num]  = lista[num], lista[num+1]
 print(f'Lista em ordem decrescente: {lista}')

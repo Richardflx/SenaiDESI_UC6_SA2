@@ -1,6 +1,7 @@
-def CriarTexto():
-	valor = int(input('digite um valor: '))
+valor = int(input('Digite a quantidade de "_" desejada: '))
+
+def CriarTexto(qnt):
 	print('_'*valor)
 
-CriarTexto()
+CriarTexto(valor)
 
